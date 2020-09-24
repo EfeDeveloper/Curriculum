@@ -9,18 +9,18 @@ Mira **Deployment** para conocer como desplegar el proyecto.
 _Esta plantilla se puede correr de manera Offline en cualquier maquina que cuente con un navegador web, solo basta con abrir
 el archivo index.html_
 
-*Editores de texto:
-*Visual Studio Code
-*Sublime Text
-*Atom
-*...
+* Editores de texto:
+* Visual Studio Code
+* Sublime Text
+* Atom
+* ...
 
 
 ### Instalación 🔧
 
 _Para editar la plantilla basta con usar el editor de codigo de su preferencia.
 Como punto adicional podemos alojar nuestro Curriculum como web estatica en github
-para conocer un poco mas de github pages puedes seguir el siguiente link: https://pages.github.com _
+para conocer un poco mas de github pages puedes seguir el siguiente link: https://pages.github.com_
 
 
 ## Construido con 🛠️
@@ -28,8 +28,8 @@ para conocer un poco mas de github pages puedes seguir el siguiente link: https:
 _HTML
 CSS_
 
-* [HTML](https://devdocs.io/html/) - El framework web usado
-* [CSS](https://www.w3schools.com/cssref/) - Estilos
+* [HTML](https://devdocs.io/html/) - lenguaje de marcado de hipertexto
+* [CSS](https://www.w3schools.com/cssref/) - Hojas de estilo en cascada
 
 
 ## Contribuyendo 🖇️
