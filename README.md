@@ -1,5 +1,5 @@
-# Curriculum
-Diseño CV Online
+# Curriculum 📑
+Diseño de CV Online para presentación de información personal y habilidades en el area del análisis y desarrollo de software.
 
 Comenzando 🚀
 Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
