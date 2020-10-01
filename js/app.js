@@ -45,4 +45,79 @@ $(document).ready(function () {
   }, options);
 
   sectionObserver.observe(counterSection);
+
+  // filtro de imagenes
+
+  var $wrapper = $(".portfolio_wrapper");
+
+  // Iniciando isotope
+
+  $wrapper.isotope({
+    filter: "*",
+    layoutMode: "masonry",
+    animationOptions: {
+      duration: 750,
+      easing: "linear",
+    },
+  });
+
+  let links = document.querySelectorAll(".tabs a");
+
+  links.forEach((link) => {
+    let selector = link.dataset.filter;
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      $wrapper.isotope({
+        filter: selector,
+        layoutMode: "masonry",
+        animationOptions: {
+          duration: 750,
+          easing: "linear",
+        },
+      });
+
+      links.forEach((link) => {
+        link.classList.remove("active");
+      });
+      e.target.classList.add("active");
+    });
+  });
+
+  // MagnificPopup plugin -- imagenes PopUp
+
+  $(".magnific").magnificPopup({
+    // Opciones de inicialización
+    type: "image",
+    preload: true,
+    showCloseBtn: false,
+    type: "image",
+      gallery: {
+      enabled: true,
+      preload: [0, 1],
+      navigateByImgClick: true,
+      arrowMarkup:
+        '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // marcador del botón de dirección
+      tPrev: "Anterior",
+      tNext: "Siguiente",
+      tCounter: '<span class="mfp-counter">%curr% of %total%</span>', // marcado del contador
+    },
+    zoom: {
+      enabled: true,
+
+      duration: 450, // duración del efecto, en milisegundos
+      easing: "ease-in-out", // Función de suavizado de transición en CSS
+
+      /* La función "opener" debe devolver el elemento desde el que se ampliará la ventana emergente
+         y a qué ventana emergente se reducirá
+         Por defecto busca una etiqueta de imagen: */
+      opener: function (openerElement) {
+        /* "openerElement" es el elemento en el que se inicializó la ventana emergente, en este caso su etiqueta <a>
+           no necesita agregar la opción "opener" si este código coincide con sus necesidades, es predeterminada. */
+        return openerElement.is("img")
+          ? openerElement
+          : openerElement.find("img");
+      },
+    },
+  });
 });
