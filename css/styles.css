@@ -519,3 +519,9 @@ section.work .wrapper .slider_wrapper .slider .slide {
   flex-direction: column;
   align-items: center;
 }
+
+section.partners .brands_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-aroundn;
+}
