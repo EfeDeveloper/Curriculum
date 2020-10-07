@@ -92,7 +92,7 @@ $(document).ready(function () {
     preload: true,
     showCloseBtn: false,
     type: "image",
-      gallery: {
+    gallery: {
       enabled: true,
       preload: [0, 1],
       navigateByImgClick: true,
@@ -119,5 +119,15 @@ $(document).ready(function () {
           : openerElement.find("img");
       },
     },
+  });
+
+  //Slider
+
+  $(".slider").slick({
+    arrows: false,
+    autoplay: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
   });
 });
