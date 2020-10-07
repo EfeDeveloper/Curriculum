@@ -525,3 +525,46 @@ section.partners .brands_wrapper{
   align-items: center;
   justify-content: space-aroundn;
 }
+
+section.contact .wrapper{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 60px;
+  margin-top: 40px;
+  align-items: center;
+}
+
+section.contact .wrapper .left{
+  color: var(--ternary);
+}
+
+section.contact .wrapper .left > div{
+display: flex;
+align-items: center;
+margin-top: 30px;
+}
+
+section.contact .wrapper .left > div div:nth-child(1){
+  margin-right: 10px;
+}
+
+section.contact .wrapper .left i{
+  font-size: 30px;
+  color: var(--info);
+  }
+
+section.contact .wrapper .left h4{
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+section.contact .wrapper .left h4 + span{
+  font-weight: 100;
+  font-size: 14px;
+}
+
+section.contact .wrapper .left iframe{
+  margin-left: 53px;
+  margin-bottom: 40px;
+}
