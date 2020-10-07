@@ -622,3 +622,11 @@ section.contact .wrapper .right button {
 section.contact .wrapper .right button:hover {
   background: var(--twitter);
 }
+
+footer {
+  background: var(--footer);
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 14px;
+  color: var(--ternary);
+}
