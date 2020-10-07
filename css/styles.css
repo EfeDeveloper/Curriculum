@@ -520,13 +520,13 @@ section.work .wrapper .slider_wrapper .slider .slide {
   align-items: center;
 }
 
-section.partners .brands_wrapper{
+section.partners .brands_wrapper {
   display: flex;
   align-items: center;
   justify-content: space-aroundn;
 }
 
-section.contact .wrapper{
+section.contact .wrapper {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 60px;
@@ -534,37 +534,91 @@ section.contact .wrapper{
   align-items: center;
 }
 
-section.contact .wrapper .left{
+section.contact .wrapper .left {
   color: var(--ternary);
 }
 
-section.contact .wrapper .left > div{
-display: flex;
-align-items: center;
-margin-top: 30px;
+section.contact .wrapper .left > div {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
 }
 
-section.contact .wrapper .left > div div:nth-child(1){
+section.contact .wrapper .left > div div:nth-child(1) {
   margin-right: 10px;
 }
 
-section.contact .wrapper .left i{
+section.contact .wrapper .left i {
   font-size: 30px;
   color: var(--info);
-  }
+}
 
-section.contact .wrapper .left h4{
+section.contact .wrapper .left h4 {
   font-weight: 700;
   font-size: 16px;
   margin-bottom: 5px;
 }
 
-section.contact .wrapper .left h4 + span{
+section.contact .wrapper .left h4 + span {
   font-weight: 100;
   font-size: 14px;
 }
 
-section.contact .wrapper .left iframe{
+section.contact .wrapper .left iframe {
   margin-left: 53px;
   margin-bottom: 40px;
+}
+
+section.contact .wrapper .right .form_group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+section.contact .wrapper .right .form_group > div {
+  display: flex;
+  flex-direction: column;
+}
+
+section.contact .wrapper .right .form_group > div label {
+  color: var(--ternary);
+  margin-bottom: 8px;
+}
+
+section.contact .wrapper .right .form_group > div input,
+section.contact .wrapper .right .form_group.textarea_wrapper textarea {
+  padding: 10px;
+  border-radius: 4px;
+  background: transparent;
+  border: 1px solid var(--dark-blue);
+  color: var(--ternary);
+  font-size: 14px;
+}
+
+section.contact .wrapper .right .form_group > div input:focus,
+section.contact .wrapper .right .form_group.textarea_wrapper textarea:focus {
+  border-color: var(--secondary);
+  outline: none;
+}
+
+section.contact .wrapper .right .form_group.textarea_wrapper {
+  display: block;
+  width: 100%;
+}
+
+section.contact .wrapper .right button {
+  background: var(--info);
+  border: none;
+  padding: 1rem 2rem;
+  color: var(--pure);
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+section.contact .wrapper .right button:hover {
+  background: var(--twitter);
 }
