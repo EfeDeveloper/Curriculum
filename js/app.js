@@ -8,7 +8,9 @@ $(document).ready(function () {
     bar.style.width = percentage + "%";
   });
 
-  // Contador
+  /*
+  *Contador 👇📌coment📌
+  */
 
   const counters = document.querySelectorAll(".counter");
 
@@ -46,11 +48,15 @@ $(document).ready(function () {
 
   sectionObserver.observe(counterSection);
 
-  // filtro de imagenes
+  /*
+  *filtro de imagenes 👇📌coment📌
+  */
 
   var $wrapper = $(".portfolio_wrapper");
 
-  // Iniciando isotope
+  /*
+  *Iniciando isotope 👈👇📌coment📌
+  */
 
   $wrapper.isotope({
     filter: "*",
@@ -84,10 +90,14 @@ $(document).ready(function () {
     });
   });
 
-  // MagnificPopup plugin -- imagenes PopUp
+  // *MagnificPopup plugin -- imagenes PopUp
 
   $(".magnific").magnificPopup({
-    // Opciones de inicialización
+
+    /*
+    *Opciones de inicialización 👇📌coment📌
+    */
+
     type: "image",
     preload: true,
     showCloseBtn: false,
@@ -97,23 +107,27 @@ $(document).ready(function () {
       preload: [0, 1],
       navigateByImgClick: true,
       arrowMarkup:
-        '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // marcador del botón de dirección
+        '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // *marcador del botón de dirección 👈📌coment📌
       tPrev: "Anterior",
       tNext: "Siguiente",
-      tCounter: '<span class="mfp-counter">%curr% of %total%</span>', // marcado del contador
+      tCounter: '<span class="mfp-counter">%curr% of %total%</span>', // *marcado del contador 👈📌coment📌
     },
     zoom: {
       enabled: true,
 
-      duration: 450, // duración del efecto, en milisegundos
-      easing: "ease-in-out", // Función de suavizado de transición en CSS
+      duration: 450, // *duración del efecto, en milisegundos 👈📌coment📌
+      easing: "ease-in-out", // *Función de suavizado de transición en CSS 👈📌coment📌
 
-      /* La función "opener" debe devolver el elemento desde el que se ampliará la ventana emergente
-         y a qué ventana emergente se reducirá
-         Por defecto busca una etiqueta de imagen: */
+      /*
+       *La función "opener" debe devolver el elemento desde el que se ampliará la ventana emergente
+       * y a qué ventana emergente se reducirá
+       *Por defecto busca una etiqueta de imagen: 👈📌coment📌
+       */
       opener: function (openerElement) {
-        /* "openerElement" es el elemento en el que se inicializó la ventana emergente, en este caso su etiqueta <a>
-           no necesita agregar la opción "opener" si este código coincide con sus necesidades, es predeterminada. */
+        /*
+         *openerElement" es el elemento en el que se inicializó la ventana emergente, en este caso su etiqueta <a>
+         *no necesita agregar la opción "opener" si este código coincide con sus necesidades, es predeterminada.👈📌coment📌
+         */
         return openerElement.is("img")
           ? openerElement
           : openerElement.find("img");
@@ -121,7 +135,9 @@ $(document).ready(function () {
     },
   });
 
-  //Slider
+  /*
+  *Slider 👇📌coment📌
+  */
 
   $(".slider").slick({
     arrows: false,

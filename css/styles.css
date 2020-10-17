@@ -1,7 +1,11 @@
-/* Fuente */
+/* 
+*Fuente 👇📌coment📌
+*/
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
 
-/* Colores */
+/*
+*Colores 👇📌coment📌
+*/
 :root {
   --primary: #132852;
   --dark: #081931;
@@ -24,7 +28,9 @@
   --yellow: #f7da3a;
 }
 
-/* Reinicio */
+/*
+*Reinicio 👇📌coment📌
+*/
 * {
   margin: 0;
   padding: 0;
@@ -35,7 +41,7 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
   background: var(--dark);
   -webkit-font-smoothing: antialiased;
-  height: 5000px;
+  padding-bottom: 3rem;
 }
 
 h1,
@@ -271,7 +277,7 @@ section.about .content .right p {
 }
 
 section.about .content .right p span:nth-child(1) {
-  width: 50%;
+  width: 130px;
   float: left;
   font-weight: 500;
   padding-right: 10px;
@@ -279,14 +285,14 @@ section.about .content .right p span:nth-child(1) {
   position: relative;
 }
 section.about .content .right p span:nth-child(2) {
-  padding-left: 145px;
+  padding-left: 150px;
   display: block;
 }
 
 section.about .content .right p span:nth-child(1):after {
   content: ":";
   position: absolute;
-  right: 0.5rem;
+  right: 0;
   top: 0;
 }
 
@@ -463,8 +469,6 @@ section.work .wrapper .portfolio .tabs ul li a.active {
 
 section.work .wrapper .portfolio .portfolio_wrapper {
   margin-top: 4rem;
-  /*display: grid;
-  grid-template-columns: repeat(3, 1fr);*/
   display: flex;
 }
 
@@ -491,7 +495,7 @@ section.work .wrapper .slider_wrapper .icon_wrap {
 
 section.work .wrapper .slider_wrapper .slider .slide p {
   color: var(--ternary);
-  line-height: 1.6p;
+  line-height: 1.6;
   text-align: center;
   margin-bottom: 1rem;
   padding-top: 2rem;
@@ -523,7 +527,7 @@ section.work .wrapper .slider_wrapper .slider .slide {
 section.partners .brands_wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-aroundn;
+  justify-content: space-around;
 }
 
 section.contact .wrapper {
@@ -541,7 +545,7 @@ section.contact .wrapper .left {
 section.contact .wrapper .left > div {
   display: flex;
   align-items: center;
-  margin-top: 30px;
+  margin-bottom: 40px;
 }
 
 section.contact .wrapper .left > div div:nth-child(1) {
@@ -562,11 +566,6 @@ section.contact .wrapper .left h4 {
 section.contact .wrapper .left h4 + span {
   font-weight: 100;
   font-size: 14px;
-}
-
-section.contact .wrapper .left iframe {
-  margin-left: 53px;
-  margin-bottom: 40px;
 }
 
 section.contact .wrapper .right .form_group {
@@ -629,4 +628,123 @@ footer {
   padding: 2rem 0;
   font-size: 14px;
   color: var(--ternary);
+}
+
+/*
+*Media Queries 👇📌coment📌
+*/
+
+@media (max-width: 1280px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 1024px) {
+  section.profile {
+    flex-direction: column;
+    align-items: flex-start;
+    clip-path: none;
+  }
+  section.profile .left {
+    margin: 2rem;
+  }
+
+  section.profile .right {
+    align-self: flex-end;
+  }
+
+  section.work .wrapper {
+    display: block;
+  }
+
+  section.work .wrapper .slider_wrapper {
+    margin-bottom: -30rem;
+  }
+
+  section.partners {
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 970px) {
+  section.skills .content {
+    display: block;
+  }
+  section.skills .content .left {
+    margin-bottom: 6rem;
+  }
+  section.work .wrapper .slider_wrapper {
+    margin-bottom: -55rem;
+  }
+
+  section.partners .brands_wrapper {
+    flex-wrap: wrap;
+  }
+
+  section.parners .brands_wrapper img {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section.about .content {
+    display: block;
+  }
+
+  section.about .content .left {
+    margin-bottom: 6rem;
+  }
+  section.contact .wrapper {
+    display: block;
+  }
+
+  section.contact .wrapper .left {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+    justify-content: space-between;
+  }
+  section.counter_section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  section.counter_section > div {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  section.profile {
+    align-items: center;
+  }
+
+  section.profile .right {
+    align-self: center;
+  }
+
+  section.profile .left {
+    margin-bottom: 6rem;
+  }
+
+  section.work .wrapper .portfolio .tabs ul {
+    flex-wrap: wrap;
+  }
+
+  section.work .wrapper .portfolio .tabs ul li {
+    margin-bottom: 4rem;
+  }
+
+  section.work .wrapper .portfolio .portfolio_wrapper {
+    margin-top: 0;
+  }
+
+  section.contact .wrapper .right .form_group {
+    grid-template-columns: 1fr;
+  }
+  section.work .wrapper .slider_wrapper {
+    margin-bottom: -50rem;
+  }
 }
