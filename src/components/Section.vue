@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-parsing-error -->
 <script setup lang="ts">
 interface Props {
   id: string
@@ -7,10 +8,6 @@ interface Props {
 }
 
 defineProps<Props>()
-
-const emit = defineEmits<{
-  mounted: []
-}>()
 </script>
 
 <template>

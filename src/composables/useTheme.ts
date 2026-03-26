@@ -13,7 +13,6 @@ export function useTheme() {
    * Initialize theme from localStorage or system preference
    */
   const initTheme = () => {
-    const htmlElement = document.documentElement
     const savedTheme = localStorage.getItem('theme') as Theme | null
 
     if (savedTheme) {

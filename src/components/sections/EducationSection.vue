@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useCurriculumStore } from '@/stores/curriculumStore'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 import Section from '@/components/Section.vue'
 import { GraduationCap } from 'lucide-vue-next'
 

@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import type { CurriculumState, Experience, Education, Project, Skill, Contact } from '@/types/curriculum'
+import type { CurriculumState } from '@/types/curriculum'
 
 export const useCurriculumStore = defineStore('curriculum', () => {
   const state = ref<CurriculumState>({

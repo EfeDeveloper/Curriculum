@@ -13,7 +13,7 @@ export interface PDFExportOptions {
  * User can save as PDF through browser's native print-to-file feature
  */
 export function exportCurriculumPDF(options: PDFExportOptions = {}): void {
-  const { filename = 'curriculum.pdf', title = 'Curriculum' } = options
+  const { title = 'Curriculum' } = options
 
   // Store original title
   const originalTitle = document.title
