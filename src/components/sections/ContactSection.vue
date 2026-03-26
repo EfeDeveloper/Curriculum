@@ -36,13 +36,13 @@ function getIcon(type: string) {
     title="Get in Touch"
     subtitle="Let's connect and discuss opportunities"
   >
-    <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+    <div class="flex flex-wrap gap-2 justify-center md:justify-start">
       <Button
         v-for="contact in contacts"
         :key="contact.id"
         :as-child="contact.url ? true : false"
         variant="outline"
-        class="text-primary hover:text-primary/80 dark:hover:text-primary/90 font-medium transition-colors duration-200 hover:underline"
+        class="text-primary hover:border-primary/60 dark:hover:border-primary/70 font-medium transition-colors duration-200"
       >
         <a
           v-if="contact.url"
@@ -53,11 +53,11 @@ function getIcon(type: string) {
           :aria-label="`Contact via ${contact.type}`"
         >
           <component :is="getIcon(contact.type)" class="w-4 h-4" />
-          <span class="hidden sm:inline">{{ contact.label }}</span>
+          <span class="hidden sm:inline text-sm">{{ contact.label }}</span>
         </a>
         <button v-else class="flex items-center gap-2">
           <component :is="getIcon(contact.type)" class="w-4 h-4" />
-          <span class="hidden sm:inline">{{ contact.value }}</span>
+          <span class="hidden sm:inline text-sm">{{ contact.value }}</span>
         </button>
       </Button>
     </div>
