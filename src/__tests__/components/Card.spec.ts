@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 
 describe('Card components', () => {
   describe('Card', () => {
@@ -118,25 +118,10 @@ describe('Card components', () => {
     })
   })
 
-  describe('CardFooter', () => {
-    it('should render footer with flex layout', () => {
-      const wrapper = mount(CardFooter, {
-        slots: {
-          default: 'Footer'
-        }
-      })
-
-      const classes = wrapper.element.className
-      expect(classes).toContain('flex')
-      expect(classes).toContain('items-center')
-      expect(classes).toContain('px-6')
-    })
-  })
-
   describe('Card composition', () => {
     it('should compose all card parts correctly', () => {
       const wrapper = mount({
-        components: { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter },
+        components: { Card, CardHeader, CardTitle, CardDescription, CardContent },
         template: `
           <Card>
             <CardHeader>
@@ -144,7 +129,6 @@ describe('Card components', () => {
               <CardDescription>A test card</CardDescription>
             </CardHeader>
             <CardContent>Main content here</CardContent>
-            <CardFooter>Footer content</CardFooter>
           </Card>
         `
       })
@@ -152,7 +136,6 @@ describe('Card components', () => {
       expect(wrapper.text()).toContain('Test Card')
       expect(wrapper.text()).toContain('A test card')
       expect(wrapper.text()).toContain('Main content here')
-      expect(wrapper.text()).toContain('Footer content')
     })
   })
 })

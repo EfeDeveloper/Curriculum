@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { Component } from 'vue'
 import { useCurriculumStore } from '@/stores/curriculumStore'
 import {
   Code,
@@ -12,7 +13,7 @@ const curriculum = useCurriculumStore()
 const skills = curriculum.getSkills()
 
 // Map skill categories to category icons
-const categoryIconMap: { [key: string]: any } = {
+const categoryIconMap: Record<string, Component> = {
   'Frontend': Code,
   'Backend': Server,
   'DevOps & Tools': Cloud,

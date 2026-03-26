@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/no-parsing-error -->
 <script setup lang="ts">
 interface Props {
   id: string

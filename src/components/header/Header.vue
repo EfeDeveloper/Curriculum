@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useCurriculumStore } from '@/stores/curriculumStore'
-import { Button } from '@/components/ui/button'
 import ThemeToggle from './ThemeToggle.vue'
 import { Home, FolderOpen, User } from 'lucide-vue-next'
 
@@ -30,19 +29,19 @@ const scrollToSection = (sectionId: string) => {
         </a>
 
         <!-- Navigation Menu -->
-        <nav class="hidden md:flex items-center gap-6">
-          <Button @click="scrollToSection('#hero')" variant="ghost" class="flex items-center gap-2 transition-colors duration-300 font-semibold text-sm border-b-2 border-transparent hover:border-primary pb-1 group">
+        <nav class="hidden md:flex items-center gap-12">
+          <div @click="scrollToSection('#hero')" class="flex items-center gap-2 text-sm font-semibold cursor-pointer border-b-2 border-transparent hover:border-primary transition-colors duration-300 pb-1 group">
             <Home :size="18" class="transition-transform duration-300 group-hover:scale-110" />
             <span>Home</span>
-          </Button>
-          <Button @click="scrollToSection('#projects')" variant="ghost" class="flex items-center gap-2 transition-colors duration-300 font-semibold text-sm border-b-2 border-transparent hover:border-primary pb-1 group">
+          </div>
+          <div @click="scrollToSection('#projects')" class="flex items-center gap-2 text-sm font-semibold cursor-pointer border-b-2 border-transparent hover:border-primary transition-colors duration-300 pb-1 group">
             <FolderOpen :size="18" class="transition-transform duration-300 group-hover:scale-110" />
             <span>Projects</span>
-          </Button>
-          <Button @click="scrollToSection('#story')" variant="ghost" class="flex items-center gap-2 transition-colors duration-300 font-semibold text-sm border-b-2 border-transparent hover:border-primary pb-1 group">
+          </div>
+          <div @click="scrollToSection('#story')" class="flex items-center gap-2 text-sm font-semibold cursor-pointer border-b-2 border-transparent hover:border-primary transition-colors duration-300 pb-1 group">
             <User :size="18" class="transition-transform duration-300 group-hover:scale-110" />
             <span>About</span>
-          </Button>
+          </div>
         </nav>
 
         <!-- Theme Toggle -->
