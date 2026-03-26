@@ -42,7 +42,7 @@ function getIcon(type: string) {
         :key="contact.id"
         :as-child="contact.url ? true : false"
         variant="outline"
-        class="dark:border-input dark:text-foreground dark:hover:bg-input/50"
+        class="text-primary hover:text-primary/80 dark:hover:text-primary/90 font-medium transition-colors duration-200 hover:underline"
       >
         <a
           v-if="contact.url"
