@@ -20,6 +20,7 @@ function getLevelVariant(level: string): 'default' | 'secondary' | 'outline' {
   }
 }
 
+
 /**
  * Get display label for skill level
  */
@@ -34,25 +35,25 @@ function getLevelLabel(level: string): string {
     title="Technical Skills"
     subtitle="Languages, frameworks, and tools"
   >
-    <div class="space-y-8">
+    <div class="space-y-6">
       <div
         v-for="skillGroup in skills"
         :key="skillGroup.id"
-        class="space-y-3"
+        class="space-y-2"
       >
-        <h3 class="text-lg md:text-xl font-semibold text-primary dark:text-primary">
+        <h3 class="text-base font-semibold text-primary dark:text-primary">
           {{ skillGroup.category }}
         </h3>
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-1.5">
           <Badge
             v-for="skill in skillGroup.items"
             :key="skill.name"
             :variant="getLevelVariant(skill.level)"
             :class="{
-              'bg-primary text-primary-foreground dark:bg-primary/20 dark:text-primary hover:shadow-md transition-all duration-200': skill.level === 'expert',
-              'bg-secondary/10 text-foreground dark:bg-secondary/10 dark:text-foreground hover:shadow-md transition-all duration-200': skill.level !== 'expert'
+              'bg-primary text-primary-foreground dark:bg-primary/20 dark:text-primary hover:border-primary/70 transition-colors duration-200': skill.level === 'expert',
+              'bg-secondary/10 text-foreground dark:bg-secondary/10 dark:text-foreground hover:border-primary/70 transition-colors duration-200': skill.level !== 'expert'
             }"
-            class="text-xs md:text-sm px-2 md:px-3 py-1 md:py-2"
+            class="text-xs px-2.5 py-1"
             :title="`${skill.name} - ${getLevelLabel(skill.level)}`"
           >
             {{ skill.name }}
