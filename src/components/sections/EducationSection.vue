@@ -14,37 +14,37 @@ const education = curriculum.getEducation()
     title="Education"
     subtitle="Continuous learning and professional development"
   >
-    <div class="space-y-6">
+    <div class="space-y-4">
       <Card
         v-for="edu in education"
         :key="edu.id"
-        class="hover:shadow-lg hover:border-primary/30 dark:hover:shadow-lg dark:hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
+        class="hover:border-primary/60 transition-all duration-200"
       >
-        <CardHeader>
-          <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 dark:bg-primary/20 flex items-center justify-center">
-              <GraduationCap class="w-5 h-5 text-primary dark:text-primary" />
+        <CardHeader class="pb-3">
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-primary/10 dark:bg-primary/20 flex items-center justify-center">
+              <GraduationCap class="w-4 h-4 text-primary dark:text-primary" />
             </div>
             <div class="flex-1 min-w-0">
-              <CardTitle class="text-xl md:text-2xl text-foreground dark:text-foreground">
+              <CardTitle class="text-base font-semibold text-foreground dark:text-foreground">
                 {{ edu.degree }}
               </CardTitle>
-              <CardDescription class="text-base text-muted-foreground dark:text-muted-foreground mt-1">
+              <CardDescription class="text-sm text-muted-foreground dark:text-muted-foreground mt-0.5">
                 <span class="underline decoration-primary">{{ edu.institution }}</span> • {{ edu.field }}
               </CardDescription>
             </div>
           </div>
-          <p class="text-sm text-muted-foreground dark:text-muted-foreground mt-3">
+          <p class="text-xs text-muted-foreground dark:text-muted-foreground mt-2">
             Graduated: {{ edu.graduationDate }}
             <span v-if="edu.gpa" class="ml-2">• GPA: {{ edu.gpa }}</span>
           </p>
         </CardHeader>
-        <CardContent v-if="edu.highlights" class="space-y-3">
-          <ul class="space-y-2">
+        <CardContent v-if="edu.highlights" class="space-y-2">
+          <ul class="space-y-1">
             <li
               v-for="(highlight, idx) in edu.highlights"
               :key="idx"
-              class="flex gap-3 text-sm md:text-base text-foreground dark:text-foreground"
+              class="flex gap-2 text-sm text-foreground dark:text-foreground line-clamp-1"
             >
               <span class="text-primary dark:text-primary flex-shrink-0">✓</span>
               <span>{{ highlight }}</span>
