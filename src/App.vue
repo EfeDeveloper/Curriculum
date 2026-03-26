@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { useTheme } from '@/composables/useTheme'
 import Header from '@/components/header/Header.vue'
-import ExperienceSection from '@/components/sections/ExperienceSection.vue'
-import EducationSection from '@/components/sections/EducationSection.vue'
-import ProjectsSection from '@/components/sections/ProjectsSection.vue'
-import SkillsSection from '@/components/sections/SkillsSection.vue'
+import HeroSection from '@/components/sections/HeroSection.vue'
+import NewProjectsSection from '@/components/sections/NewProjectsSection.vue'
+import NewExperienceSection from '@/components/sections/NewExperienceSection.vue'
+import MyStorySection from '@/components/sections/MyStorySection.vue'
+import NewSkillsSection from '@/components/sections/NewSkillsSection.vue'
 import ContactSection from '@/components/sections/ContactSection.vue'
 import Footer from '@/components/sections/Footer.vue'
 
@@ -17,28 +18,31 @@ useTheme().initTheme()
 
 <template>
   <div class="min-h-screen bg-background text-foreground dark:bg-background dark:text-foreground">
-    <!-- Header with theme toggle -->
+    <!-- Header with theme toggle and navigation -->
     <Header />
 
     <!-- Main content -->
     <main class="flex-1">
-      <!-- Experience Section -->
-      <ExperienceSection />
+      <!-- Hero Section: Greeting, title, CTA buttons, and circular image -->
+      <HeroSection />
 
-      <!-- Education Section -->
-      <EducationSection />
+      <!-- Projects Section: 2x2 grid with mockup placeholders -->
+      <NewProjectsSection />
 
-      <!-- Projects Section -->
-      <ProjectsSection />
+      <!-- Experience Section: Timeline with expandable items -->
+      <NewExperienceSection />
 
-      <!-- Skills Section -->
-      <SkillsSection />
+      <!-- My Story Section: Narrative text with inline links -->
+      <MyStorySection />
+
+      <!-- Skills Section: 4-column grid with simple text lists -->
+      <NewSkillsSection />
 
       <!-- Contact Section -->
       <ContactSection />
     </main>
 
-    <!-- Footer -->
+    <!-- Footer: CTA, links, social icons, copyright -->
     <Footer />
   </div>
 </template>

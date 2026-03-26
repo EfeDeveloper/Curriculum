@@ -11,19 +11,29 @@ const { personalInfo } = curriculum.state
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 md:h-20">
         <!-- Logo/Title Section -->
-        <div class="flex items-center gap-2 min-w-0">
-          <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center flex-shrink-0 hover:scale-105 transition-all duration-300 shadow-md dark:shadow-lg">
+        <a href="#" class="flex items-center gap-2 min-w-0 group">
+          <div class="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300 shadow-md dark:shadow-lg">
             <span class="text-primary-foreground font-bold text-lg">{{ personalInfo.name.charAt(0) }}</span>
           </div>
-          <div class="min-w-0">
-            <h1 class="text-lg md:text-xl font-bold text-primary truncate">
+          <div class="min-w-0 hidden sm:block">
+            <h1 class="text-sm md:text-base font-bold text-foreground truncate">
               {{ personalInfo.name }}
             </h1>
-            <p class="text-xs md:text-sm text-primary font-medium truncate">
-              {{ personalInfo.title }}
-            </p>
           </div>
-        </div>
+        </a>
+
+        <!-- Navigation Menu -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200">
+            Home
+          </a>
+          <a href="#projects" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200">
+            Projects
+          </a>
+          <a href="#" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200">
+            About
+          </a>
+        </nav>
 
         <!-- Theme Toggle -->
         <ThemeToggle />
