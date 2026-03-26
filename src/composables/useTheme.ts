@@ -18,7 +18,7 @@ export function useTheme() {
 
     if (savedTheme) {
       isDark.value = savedTheme === 'dark'
-    } else {
+    } else if (typeof window !== 'undefined' && window.matchMedia) {
       // Use system preference
       isDark.value = window.matchMedia('(prefers-color-scheme: dark)').matches
     }
@@ -76,14 +76,16 @@ export function useTheme() {
     initTheme()
 
     // Listen to system preference changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    const handleChange = (e: MediaQueryListEvent) => {
-      if (!localStorage.getItem('theme')) {
-        isDark.value = e.matches
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+      const handleChange = (e: MediaQueryListEvent) => {
+        if (!localStorage.getItem('theme')) {
+          isDark.value = e.matches
+        }
       }
-    }
 
-    mediaQuery.addEventListener('change', handleChange)
+      mediaQuery.addEventListener('change', handleChange)
+    }
   })
 
   return {
