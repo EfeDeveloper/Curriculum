@@ -40,7 +40,7 @@ function getLevelLabel(level: string): string {
         :key="skillGroup.id"
         class="space-y-3"
       >
-        <h3 class="text-lg md:text-xl font-semibold text-foreground dark:text-foreground">
+        <h3 class="text-lg md:text-xl font-semibold text-primary dark:text-primary">
           {{ skillGroup.category }}
         </h3>
         <div class="flex flex-wrap gap-2">
@@ -48,7 +48,11 @@ function getLevelLabel(level: string): string {
             v-for="skill in skillGroup.items"
             :key="skill.name"
             :variant="getLevelVariant(skill.level)"
-            class="text-xs md:text-sm px-2 md:px-3 py-1 md:py-2 dark:border-input dark:text-foreground"
+            :class="{
+              'bg-primary text-primary-foreground dark:bg-primary/20 dark:text-primary hover:shadow-md transition-all duration-200': skill.level === 'expert',
+              'bg-secondary/10 text-foreground dark:bg-secondary/10 dark:text-foreground hover:shadow-md transition-all duration-200': skill.level !== 'expert'
+            }"
+            class="text-xs md:text-sm px-2 md:px-3 py-1 md:py-2"
             :title="`${skill.name} - ${getLevelLabel(skill.level)}`"
           >
             {{ skill.name }}

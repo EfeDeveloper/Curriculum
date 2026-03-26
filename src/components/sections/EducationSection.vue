@@ -18,7 +18,7 @@ const education = curriculum.getEducation()
       <Card
         v-for="edu in education"
         :key="edu.id"
-        class="hover:shadow-md dark:hover:shadow-lg transition-shadow"
+        class="hover:shadow-lg hover:border-primary/30 dark:hover:shadow-lg dark:hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
       >
         <CardHeader>
           <div class="flex items-start gap-4">
@@ -30,7 +30,7 @@ const education = curriculum.getEducation()
                 {{ edu.degree }}
               </CardTitle>
               <CardDescription class="text-base text-muted-foreground dark:text-muted-foreground mt-1">
-                {{ edu.institution }} • {{ edu.field }}
+                <span class="underline decoration-primary">{{ edu.institution }}</span> • {{ edu.field }}
               </CardDescription>
             </div>
           </div>
