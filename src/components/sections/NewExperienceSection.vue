@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useCurriculumStore } from '@/stores/curriculumStore'
+import { Button } from '@/components/ui/button'
 import { ref, computed } from 'vue'
 import Section from '@/components/Section.vue'
 import { CheckList } from '@/components/ui/check-list'
@@ -17,24 +18,24 @@ const current = computed(() => experience[selectedExperience.value])
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
       <!-- Left Column: Company List -->
       <div class="space-y-2">
-        <button
+        <Button
           v-for="(job, idx) in experience"
           :key="job.id"
           @click="selectedExperience = idx"
-          class="w-full text-left p-3 rounded-lg transition-all duration-300"
-          :class="
-            selectedExperience === idx
-              ? 'bg-primary/10 text-primary font-bold border-l-4 border-primary pl-2'
-              : 'text-foreground hover:text-primary hover:bg-primary/5'
-          "
+          variant="ghost"
+          class="w-full text-left justify-start transition-all duration-300"
+          :class="{
+            'bg-primary/10 text-primary font-bold border-l-4 border-primary pl-2': selectedExperience === idx,
+            'text-foreground hover:text-primary': selectedExperience !== idx
+          }"
         >
           {{ job.company }}
-        </button>
+        </Button>
       </div>
 
       <!-- Right Column: Experience Details -->
       <div v-if="current" class="md:col-span-2">
-        <transition name="fade" mode="out-in">
+        <transition enter-active-class="transition-opacity duration-300" leave-active-class="transition-opacity duration-300" enter-from-class="opacity-0" leave-to-class="opacity-0" mode="out-in">
           <div :key="selectedExperience" class="space-y-6">
             <!-- Header -->
             <div>
@@ -57,20 +58,3 @@ const current = computed(() => experience[selectedExperience.value])
     </div>
   </Section>
 </template>
-
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.fade-enter-to,
-.fade-leave-from {
-  opacity: 1;
-}
-</style>

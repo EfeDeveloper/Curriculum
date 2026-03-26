@@ -55,10 +55,10 @@ function getIcon(type: string) {
           <component :is="getIcon(contact.type)" class="w-4 h-4" />
           <span class="hidden sm:inline text-sm">{{ contact.label }}</span>
         </a>
-        <button v-else class="flex items-center gap-2">
+        <div v-else class="flex items-center gap-2">
           <component :is="getIcon(contact.type)" class="w-4 h-4" />
           <span class="hidden sm:inline text-sm">{{ contact.value }}</span>
-        </button>
+        </div>
       </Button>
     </div>
   </Section>

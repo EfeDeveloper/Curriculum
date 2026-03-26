@@ -20,7 +20,7 @@ const handleDownloadPDF = () => {
 
 <template>
   <footer class="border-t border-border bg-background flex flex-col">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10 flex-1">
+    <div class="container mx-auto px-6 sm:px-6 lg:px-8 py-8 md:py-10 flex-1">
       <!-- CTA Section -->
       <div class="text-center space-y-3 pb-4 md:pb-6">
         <h3 class="text-xl md:text-2xl font-bold text-foreground">

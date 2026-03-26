@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useCurriculumStore } from '@/stores/curriculumStore'
+import { Button } from '@/components/ui/button'
 import ThemeToggle from './ThemeToggle.vue'
+import { Home, FolderOpen, User } from 'lucide-vue-next'
 
 const curriculum = useCurriculumStore()
 const { personalInfo } = curriculum.state
@@ -13,7 +15,7 @@ const scrollToSection = (sectionId: string) => {
 
 <template>
   <header class="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm dark:shadow-none">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto px-6 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 md:h-20">
         <!-- Logo/Title Section -->
         <a href="#" class="flex items-center gap-2 min-w-0 group">
@@ -28,16 +30,19 @@ const scrollToSection = (sectionId: string) => {
         </a>
 
         <!-- Navigation Menu -->
-        <nav class="hidden md:flex items-center gap-8">
-          <button @click="scrollToSection('#hero')" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200">
-            Home
-          </button>
-          <button @click="scrollToSection('#projects')" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200">
-            Projects
-          </button>
-          <button @click="scrollToSection('#story')" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200">
-            About
-          </button>
+        <nav class="hidden md:flex items-center gap-6">
+          <Button @click="scrollToSection('#hero')" variant="ghost" class="flex items-center gap-2 transition-colors duration-300 font-semibold text-sm border-b-2 border-transparent hover:border-primary pb-1 group">
+            <Home :size="18" class="transition-transform duration-300 group-hover:scale-110" />
+            <span>Home</span>
+          </Button>
+          <Button @click="scrollToSection('#projects')" variant="ghost" class="flex items-center gap-2 transition-colors duration-300 font-semibold text-sm border-b-2 border-transparent hover:border-primary pb-1 group">
+            <FolderOpen :size="18" class="transition-transform duration-300 group-hover:scale-110" />
+            <span>Projects</span>
+          </Button>
+          <Button @click="scrollToSection('#story')" variant="ghost" class="flex items-center gap-2 transition-colors duration-300 font-semibold text-sm border-b-2 border-transparent hover:border-primary pb-1 group">
+            <User :size="18" class="transition-transform duration-300 group-hover:scale-110" />
+            <span>About</span>
+          </Button>
         </nav>
 
         <!-- Theme Toggle -->

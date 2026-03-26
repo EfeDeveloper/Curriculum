@@ -42,6 +42,41 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: #FF7159 #F5F5F5;
+  scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #F5F5F5;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #FF7159;
+  border-radius: 4px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #FF5530;
+}
+
+html.dark {
+  scrollbar-color: #FF7159 #1a1a1a;
+}
+
+html.dark::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+html.dark::-webkit-scrollbar-thumb {
+  background: #FF7159;
+}
+
 :root {
   --radius: 0.625rem;
   --background: #FDFFFF;
@@ -169,14 +204,74 @@ html {
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .typing {
+  display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  animation: typing 2.5s steps(25, end) 0.3s forwards;
-  border-right: 2px solid #FF7159;
+  width: 0;
+  animation: typing 2.5s steps(11, end) 0.3s forwards;
+  border-right: 3px solid transparent;
 }
 
 .typing::after {
   content: '';
-  animation: blink 0.5s infinite;
+  animation: blinkCursor1 2.5s 0.3s forwards;
+}
+
+.typing-delayed {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 1.5s steps(9, end) 2.8s forwards !important;
+  border-right: 3px solid transparent;
+}
+
+.typing-delayed::after {
+  content: '';
+  animation: blinkCursor2 1.5s 2.8s forwards !important;
+}
+
+/* Cursor for first line: visible only while typing, then disappears */
+@keyframes blinkCursor1 {
+  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
+    border-right-color: #FF7159;
+  }
+  5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95%, 100% {
+    border-right-color: transparent;
+  }
+}
+
+/* Cursor for second line: visible only while typing, then disappears */
+@keyframes blinkCursor2 {
+  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
+    border-right-color: #FF7159;
+  }
+  5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95%, 100% {
+    border-right-color: transparent;
+  }
 }
