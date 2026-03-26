@@ -44,6 +44,28 @@ useTheme().initTheme()
 </template>
 
 <style scoped>
+/* Smooth transitions between pages */
+:deep(*) {
+  @apply transition-colors duration-300;
+}
+
+/* Reveal animation on scroll */
+:deep([data-reveal]) {
+  animation: reveal 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Print styles for PDF export */
 @media print {
   :deep(.no-print) {
