@@ -30,22 +30,3 @@ export function exportCurriculumPDF(options: PDFExportOptions = {}): void {
   }
 }
 
-/**
- * Download curriculum as PDF (requires print-to-file or PDF printer)
- * Alternative approach using canvas rendering (requires additional library)
- */
-export function downloadCurriculumAsFile(): void {
-  // This uses the native print dialog
-  // User selects "Save as PDF" from printer options
-  exportCurriculumPDF({
-    filename: 'curriculum.pdf',
-    title: 'Curriculum - Alex Rivera'
-  })
-}
-
-/**
- * Check if browser supports print API
- */
-export function isPrintAPISupported(): boolean {
-  return typeof window !== 'undefined' && typeof window.print === 'function'
-}

@@ -224,7 +224,6 @@ export const useCurriculumStore = defineStore('curriculum', () => {
     ]
   })
 
-  const getPersonalInfo = () => state.value.personalInfo
   const getExperience = () => state.value.experience
   const getEducation = () => state.value.education
   const getProjects = () => state.value.projects
@@ -233,7 +232,6 @@ export const useCurriculumStore = defineStore('curriculum', () => {
 
   return {
     state,
-    getPersonalInfo,
     getExperience,
     getEducation,
     getProjects,

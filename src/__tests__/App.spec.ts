@@ -13,10 +13,10 @@ describe('App', () => {
       global: {
         stubs: {
           Header: true,
-          ExperienceSection: true,
+          NewExperienceSection: true,
           EducationSection: true,
-          ProjectsSection: true,
-          SkillsSection: true,
+          NewProjectsSection: true,
+          NewSkillsSection: true,
           ContactSection: true,
           Footer: true
         }
@@ -31,10 +31,10 @@ describe('App', () => {
       global: {
         stubs: {
           Header: true,
-          ExperienceSection: true,
+          NewExperienceSection: true,
           EducationSection: true,
-          ProjectsSection: true,
-          SkillsSection: true,
+          NewProjectsSection: true,
+          NewSkillsSection: true,
           ContactSection: true,
           Footer: true
         }
@@ -50,10 +50,10 @@ describe('App', () => {
       global: {
         stubs: {
           Header: true,
-          ExperienceSection: true,
+          NewExperienceSection: true,
           EducationSection: true,
-          ProjectsSection: true,
-          SkillsSection: true,
+          NewProjectsSection: true,
+          NewSkillsSection: true,
           ContactSection: true,
           Footer: true
         }

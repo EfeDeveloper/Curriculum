@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Reclame:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Reclame:wght@400&display=swap');
 @import 'tailwindcss';
 @import "tw-animate-css";
 
@@ -120,16 +120,19 @@
     font-family: 'Reclame', system-ui, sans-serif;
   }
   h1 {
-    @apply font-bold text-3xl md:text-4xl lg:text-5xl;
-    font-family: 'Playfair Display', serif;
+    @apply text-3xl md:text-4xl lg:text-5xl;
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
   }
   h2 {
-    @apply font-bold text-2xl md:text-3xl lg:text-4xl;
-    font-family: 'Playfair Display', serif;
+    @apply text-2xl md:text-3xl lg:text-4xl;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
   }
   h3 {
-    @apply font-bold text-xl md:text-2xl;
-    font-family: 'Playfair Display', serif;
+    @apply text-xl md:text-2xl;
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
   }
 }
 
@@ -146,4 +149,34 @@ html {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    border-right-color: #FF7159;
+  }
+  51%, 100% {
+    border-right-color: transparent;
+  }
+}
+
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2.5s steps(25, end) 0.3s forwards;
+  border-right: 2px solid #FF7159;
+}
+
+.typing::after {
+  content: '';
+  animation: blink 0.5s infinite;
 }

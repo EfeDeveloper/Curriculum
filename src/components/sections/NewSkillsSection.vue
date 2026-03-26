@@ -1,44 +1,57 @@
 <script setup lang="ts">
 import { useCurriculumStore } from '@/stores/curriculumStore'
+import {
+  Code,
+  Server,
+  Cloud,
+  TestTube
+} from 'lucide-vue-next'
+import Section from '@/components/Section.vue'
 
 const curriculum = useCurriculumStore()
 const skills = curriculum.getSkills()
+
+// Map skill categories to category icons
+const categoryIconMap: { [key: string]: any } = {
+  'Frontend': Code,
+  'Backend': Server,
+  'DevOps & Tools': Cloud,
+  'Testing & QA': TestTube
+}
+
+const getCategoryIcon = (category: string) => {
+  return categoryIconMap[category] || Code
+}
 </script>
 
 <template>
-  <section class="py-16 md:py-24 lg:py-32 border-b border-border">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Title -->
-      <div class="mb-12 md:mb-16">
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground">
-          Skills.
-        </h2>
-      </div>
-
-      <!-- Skills Grid: 4 columns -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-        <div
-          v-for="skillGroup in skills"
-          :key="skillGroup.id"
-          class="space-y-4"
-        >
-          <!-- Category Title -->
+  <Section id="skills" title="Skills.">
+    <!-- Skills Grid: 4 columns -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+      <div
+        v-for="skillGroup in skills"
+        :key="skillGroup.id"
+        class="space-y-4"
+      >
+        <!-- Category Title with Category Icon -->
+        <div class="flex items-center gap-2 mb-3">
+          <component :is="getCategoryIcon(skillGroup.category)" class="w-5 h-5 text-primary" />
           <h3 class="text-lg md:text-xl font-bold text-foreground">
             {{ skillGroup.category }}
           </h3>
-
-          <!-- Skill List (simple text, no badges) -->
-          <ul class="space-y-2">
-            <li
-              v-for="skill in skillGroup.items"
-              :key="skill.name"
-              class="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              {{ skill.name }}
-            </li>
-          </ul>
         </div>
+
+        <!-- Skill List -->
+        <ul class="space-y-2">
+          <li
+            v-for="skill in skillGroup.items"
+            :key="skill.name"
+            class="text-sm md:text-base text-muted-foreground hover:text-primary transition-colors duration-200"
+          >
+            {{ skill.name }}
+          </li>
+        </ul>
       </div>
     </div>
-  </section>
+  </Section>
 </template>

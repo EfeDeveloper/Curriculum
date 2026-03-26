@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { useCurriculumStore } from '@/stores/curriculumStore'
-
-const curriculum = useCurriculumStore()
-const { personalInfo } = curriculum.state
+import Section from '@/components/Section.vue'
 
 // Sample story content - user can customize
 const storyParagraphs = [
@@ -14,24 +11,17 @@ const storyParagraphs = [
 </script>
 
 <template>
-  <section class="py-16 md:py-24 lg:py-32 border-b border-border">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-      <!-- Section Title -->
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-12 md:mb-16">
-        My Story.
-      </h2>
-
-      <!-- Story Content -->
-      <div class="space-y-6 md:space-y-8">
-        <p
-          v-for="(paragraph, index) in storyParagraphs"
-          :key="index"
-          class="text-base md:text-lg text-foreground leading-relaxed"
-        >
-          <!-- Paragraphs can contain inline links -->
-          {{ paragraph }}
-        </p>
-      </div>
+  <Section id="story" title="My Story.">
+    <!-- Story Content -->
+    <div class="space-y-6 md:space-y-8">
+      <p
+        v-for="(paragraph, index) in storyParagraphs"
+        :key="index"
+        class="text-base md:text-lg text-foreground leading-relaxed"
+      >
+        <!-- Paragraphs can contain inline links -->
+        {{ paragraph }}
+      </p>
     </div>
-  </section>
+  </Section>
 </template>

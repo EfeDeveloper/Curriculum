@@ -8,7 +8,7 @@ const { personalInfo } = curriculum.state
 </script>
 
 <template>
-  <section class="py-16 md:py-24 lg:py-32 border-b border-border">
+  <section id="hero" class="py-16 md:py-24 lg:py-32 border-b border-border">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <!-- Left: Text Content -->
@@ -18,7 +18,7 @@ const { personalInfo } = curriculum.state
             <p class="text-lg md:text-xl text-muted-foreground mb-2">
               Hey, I'm {{ personalInfo.name }} 👋
             </p>
-            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight typing max-w-2xl">
               {{ personalInfo.title }}
             </h1>
           </div>
@@ -36,14 +36,6 @@ const { personalInfo } = curriculum.state
               as-child
             >
               <a href="#contact">Get In Touch</a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              class="font-semibold dark:border-primary/40 dark:text-primary dark:hover:bg-primary/10"
-              as-child
-            >
-              <a href="#projects">Browse Projects</a>
             </Button>
           </div>
         </div>

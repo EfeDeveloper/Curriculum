@@ -4,6 +4,11 @@ import ThemeToggle from './ThemeToggle.vue'
 
 const curriculum = useCurriculumStore()
 const { personalInfo } = curriculum.state
+
+const scrollToSection = (sectionId: string) => {
+  const element = document.querySelector(sectionId)
+  element?.scrollIntoView({ behavior: 'smooth' })
+}
 </script>
 
 <template>
@@ -24,15 +29,15 @@ const { personalInfo } = curriculum.state
 
         <!-- Navigation Menu -->
         <nav class="hidden md:flex items-center gap-8">
-          <a href="#" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200">
+          <button @click="scrollToSection('#hero')" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200">
             Home
-          </a>
-          <a href="#projects" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200">
+          </button>
+          <button @click="scrollToSection('#projects')" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200">
             Projects
-          </a>
-          <a href="#" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200">
+          </button>
+          <button @click="scrollToSection('#story')" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200">
             About
-          </a>
+          </button>
         </nav>
 
         <!-- Theme Toggle -->
