@@ -20,7 +20,7 @@ const projects = curriculum.getProjects()
       <Card
         v-for="project in projects"
         :key="project.id"
-        class="hover:shadow-md dark:hover:shadow-lg transition-shadow flex flex-col"
+        class="hover:shadow-lg hover:border-primary/30 dark:hover:shadow-lg dark:hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 flex flex-col"
       >
         <CardHeader>
           <CardTitle class="text-xl md:text-2xl text-foreground dark:text-foreground line-clamp-2">
@@ -48,8 +48,8 @@ const projects = curriculum.getProjects()
             <Badge
               v-for="tech in project.technologies"
               :key="tech"
-              variant="secondary"
-              class="text-xs dark:bg-input/50 dark:text-foreground"
+              variant="outline"
+              class="text-xs dark:border-primary/40 dark:text-foreground dark:hover:bg-primary/10 transition-colors"
             >
               {{ tech }}
             </Badge>
@@ -62,7 +62,7 @@ const projects = curriculum.getProjects()
               variant="outline"
               size="sm"
               as-child
-              class="dark:border-input dark:text-foreground dark:hover:bg-input/50"
+              class="dark:border-primary/40 dark:text-primary dark:hover:bg-primary/10 transition-colors duration-200"
             >
               <a :href="project.github" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
                 <Github class="w-4 h-4" />
@@ -74,7 +74,7 @@ const projects = curriculum.getProjects()
               variant="outline"
               size="sm"
               as-child
-              class="dark:border-input dark:text-foreground dark:hover:bg-input/50"
+              class="dark:border-primary/40 dark:text-primary dark:hover:bg-primary/10 transition-colors duration-200"
             >
               <a :href="project.link" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
                 <ExternalLink class="w-4 h-4" />

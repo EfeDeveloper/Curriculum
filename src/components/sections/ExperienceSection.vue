@@ -18,7 +18,7 @@ const experience = curriculum.getExperience()
       <Card
         v-for="job in experience"
         :key="job.id"
-        class="hover:shadow-md dark:hover:shadow-lg transition-shadow"
+        class="hover:shadow-lg hover:border-primary/30 dark:hover:shadow-lg dark:hover:border-primary/40 transition-all duration-300 hover:-translate-y-1"
       >
         <CardHeader>
           <div class="flex items-start justify-between gap-4 flex-wrap">
@@ -59,7 +59,7 @@ const experience = curriculum.getExperience()
               v-for="tech in job.technologies"
               :key="tech"
               variant="outline"
-              class="text-xs dark:border-input dark:text-foreground"
+              class="text-xs dark:border-primary/40 dark:text-foreground dark:hover:bg-primary/10 transition-colors"
             >
               {{ tech }}
             </Badge>
