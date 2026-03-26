@@ -43,6 +43,7 @@ useTheme().initTheme()
   </div>
 </template>
 
+
 <style scoped>
 /* Smooth transitions between pages */
 :deep(*) {
