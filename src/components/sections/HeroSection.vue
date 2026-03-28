@@ -2,9 +2,19 @@
 import { useCurriculumStore } from '@/stores/curriculumStore'
 import { Button } from '@/components/ui/button'
 import { Code2, Terminal, Brackets } from 'lucide-vue-next'
+import { computed } from 'vue'
 
 const curriculum = useCurriculumStore()
 const { personalInfo } = curriculum.state
+
+const titleParts = computed(() => {
+  const title = personalInfo.title
+  const parts = title.split(' ')
+  return {
+    first: parts[0],
+    rest: parts.slice(1).join(' '),
+  }
+})
 </script>
 
 <template>
@@ -19,7 +29,7 @@ const { personalInfo } = curriculum.state
               Hey, I'm {{ personalInfo.name }} 👋
             </p>
             <h1 class="font-bold text-foreground text-5xl md:text-6xl lg:text-7xl leading-none">
-              <span class="text-primary">Full</span> Stack<br />Developer
+              <span class="text-primary">{{ titleParts.first }}</span> {{ titleParts.rest }}
             </h1>
           </div>
 
@@ -102,11 +112,7 @@ const { personalInfo } = curriculum.state
             <div
               class="group relative border-2 border-primary/40 rounded-full w-full h-full overflow-hidden transition-all duration-700"
             >
-              <img
-                src="https://png.pngtree.com/png-vector/20250530/ourmid/pngtree-smiling-man-posing-for-a-portrait-png-image_16420590.png"
-                alt="Profile"
-                class="w-full h-full object-cover"
-              />
+              <img :src="personalInfo.avatar" alt="Profile" class="w-full h-full object-cover" />
 
               <!-- Dynamic overlay with gradient -->
               <div
